@@ -1,0 +1,23 @@
+yandexer:
+  build: yandexer
+  links:
+    - pg
+    - mq
+  ports:
+    - "8080:8080"
+  volumes:
+    - logs:/var/log/yandexer
+pg:
+  image: postgres:latest
+  environment:
+    POSTGRES_USER: charlie
+    POSTGRES_PASSWORD: mysecretpassword
+mq:
+  build: mq
+
+monitor:
+  build: monitor
+  links:
+    - yandexer
+  volumes_from:
+    - yandexer
