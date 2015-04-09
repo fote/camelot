@@ -21,6 +21,12 @@ git clone https://github.com/fote/yandextask
 cd yandextask && fig up -d
 ```
 
+Из контейнера с приложением наружу смотрит порт 8080, соответственно, URL для проверки:
+```
+http://<host_ip>:8080/camelot/
+```
+
+
 #Описание
 
 После запуска будут собраны 4 docker-контейнера:
